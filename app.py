@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse, JSONResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 import os
 from models import User, UserAge, UserAgeResponse, Feedback
 
