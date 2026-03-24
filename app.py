@@ -78,6 +78,14 @@ def get_all_feedbacks():
     return {"feedbacks": feedbacks, "count": len(feedbacks)}
 
 
+# ========== Страница для тестирования API ==========
+@main_app.get("/test")
+def get_test_page():
+    """Интерактивная страница для тестирования всех маршрутов"""
+    test_path = os.path.join(os.path.dirname(__file__), "test.html")
+    return FileResponse(test_path, media_type="text/html")
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(main_app, host="0.0.0.0", port=8000)
