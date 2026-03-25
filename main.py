@@ -1,24 +1,38 @@
 #!/usr/bin/env /opt/homebrew/bin/python3
 
+"""
+FAPI_KR1 - Контрольная работа №1 по FastAPI
+Entry point для запуска приложения с красивым выводом.
+"""
+
 import sys
-import os
+import uvicorn
 
-# Добавляем текущую папку в path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-if __name__ == "__main__":
-    import uvicorn
-    print("=" * 60)
-    print("🚀 ЗАПУСК FAPI_KR1 ПРИЛОЖЕНИЯ")
-    print("=" * 60)
-    print("\n📱 Откройте в браузере:")
-    print("   http://localhost:8000          - главная (JSON)")
-    print("   http://localhost:8000/html     - HTML страница")
-    print("   http://localhost:8000/users    - пользователь")
-    print("   http://localhost:8000/docs     - Swagger документация")
-    print("\n📝 Нажмите Ctrl+C для остановки сервера\n")
-    print("=" * 60 + "\n")
+def main():
+    """Запуск приложения Uvicorn с красивым оформлением."""
     
+    print("\n" + "="*60)
+    print("🚀 FAPI_KR1 - Запуск сервера")
+    print("="*60)
+    print()
+    print("📌 Адреса для доступа:")
+    print("   • Интерактивное тестирование:")
+    print("     🎯 http://localhost:8000/test")
+    print()
+    print("   • API Documentation:")
+    print("     📚 http://localhost:8000/docs (Swagger)")
+    print("     📄 http://localhost:8000/redoc (ReDoc)")
+    print()
+    print("   • API Endpoints:")
+    print("     🏠 http://localhost:8000 (Задание 1.1)")
+    print("     🌐 http://localhost:8000/html (Задание 1.2)")
+    print()
+    print("⏹️  Для остановки сервера нажмите: CTRL+C")
+    print("="*60)
+    print()
+    
+    # Запуск сервера
     uvicorn.run(
         "app:main_app",
         host="127.0.0.1",
@@ -26,3 +40,14 @@ if __name__ == "__main__":
         reload=True,
         log_level="info"
     )
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n⏹️  Сервер остановлен. До встречи! 👋")
+        sys.exit(0)
+    except Exception as e:
+        print(f"\n❌ Ошибка: {e}")
+        sys.exit(1)
