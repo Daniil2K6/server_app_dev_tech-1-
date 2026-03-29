@@ -1,0 +1,45 @@
+
+__pycache__/
+.coverage
+.DS_Store
+.eggs/
+.env
+.env.*.local
+.env.local
+.idea/
+.installed.cfg
+.Python
+.vscode/
+*.db
+*.egg
+*.egg-info/
+*.log
+*.pid
+*.py[cod]
+*.so
+*.sqlite
+*.swo
+*.swp
+*~
+*$py.class
+# Environment
+# IDE
+# OS
+# Project specific
+# Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+env/
+ENV/
+htmlcov/
+lib/
+lib64/
+parts/
+sdist/
+Thumbs.db
+var/
+venv/
+wheels/
